@@ -1,0 +1,7 @@
+[
+
+  { "_id": "1", "chef": "Julio", "title": "Molho Branco", "category": "Molho" },
+  { "_id": "2", "chef": "Maressa", "title": "Canja de Galiha", "category": "Sopa" },
+  { "_id": "3", "chef": "Lucas", "title": "X-Burger", "category": "Sanduíche" }
+
+]
