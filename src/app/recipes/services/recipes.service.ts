@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { delay, first, tap } from 'rxjs';
 
 import { Recipe } from '../model/recipe';
 
@@ -13,6 +14,14 @@ export class RecipesService {
   constructor(private httpClient: HttpClient) { }
 
   findAll() {
-    return  this.httpClient.get<Recipe[]>(this.API);
+    return  this.httpClient.get<Recipe[]>(this.API)
+    .pipe(
+        delay(2000),
+        tap(recipes => console.log(recipes))
+    );
+  }
+
+  search() {
+    return this.httpClient.get<Recipe[]>(this.API);
   }
 }

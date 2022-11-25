@@ -5,3 +5,11 @@ table {
 a {
   text-decoration: none;
 }
+
+.loading-spinner {
+  background: rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
