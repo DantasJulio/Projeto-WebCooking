@@ -15,10 +15,7 @@ export class RecipesService {
 
   findAll() {
     return  this.httpClient.get<Recipe[]>(this.API)
-    .pipe(
-        delay(2000),
-        tap(recipes => console.log(recipes))
-    );
+    .pipe(delay(2000));
   }
 
   search() {

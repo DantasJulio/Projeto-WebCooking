@@ -16,7 +16,7 @@ export class RecipesComponent implements OnInit {
 
   recipes$: Observable<Recipe[]>;
 
-  displayedColumns = ['chef', 'title', 'category'];
+  displayedColumns = ['Chef', 'Title', 'Category'];
 
   constructor(
     private recipesService: RecipesService,
@@ -24,7 +24,7 @@ export class RecipesComponent implements OnInit {
     ) {
       this.recipes$ = this.recipesService.findAll().pipe(
         catchError(error => {
-          this.onError('Erro ao carregar cursos!');
+          this.onError('Erro ao carregar lista de receitas!');
           return of([])
         }
         )
@@ -34,7 +34,9 @@ export class RecipesComponent implements OnInit {
    onError(errorMessage: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMessage
-    });
+    }
+
+      )
   }
 
   ngOnInit(): void {
